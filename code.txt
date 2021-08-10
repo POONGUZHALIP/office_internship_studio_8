@@ -1,5 +1,5 @@
-// C++ code
-//
+int fsrPin = 0;   
+int fsrReading;
 void setup()
 {
   pinMode(13, OUTPUT);
@@ -10,12 +10,22 @@ void setup()
   pinMode(6, INPUT);
   pinMode(5, INPUT);
   pinMode(7, OUTPUT);
+  pinMode(8,OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop()
 {
   int button = digitalRead(6);
   int button1 = digitalRead(5);
+  fsrReading = analogRead(fsrPin);
+  Serial.println(fsrReading);
+  if(fsrReading>0){
+    Serial.println(fsrReading);
+    digitalWrite(8,HIGH);
+    delay(5000);
+    digitalWrite(8,LOW);
+  }
   if (button1==HIGH){
   digitalWrite(7,HIGH);
   delay(2000);
