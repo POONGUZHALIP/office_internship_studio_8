@@ -1,3 +1,4 @@
+---------------------------you can use different controllers----------------
 int fsrPin = 0;   
 int fsrReading;
 void setup()
